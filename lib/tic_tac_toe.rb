@@ -20,7 +20,7 @@ def input_to_index(input)
 end
   
   
-  def move(input, player = "X")
+  def move(input_to_index, player = "X")
     @board[input_to_index(input)] = player
   end
 
