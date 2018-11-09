@@ -108,9 +108,9 @@ def full?
     if won? == false
       nil
     elsif @board[won?[0]] == "X"
-      "X"
+      puts "X"
     elsif @board[won?[1]] == "O"
-      "O"
+      puts "O"
     end
   end
   def play
