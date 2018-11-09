@@ -50,7 +50,13 @@ def turn_count
   counter
 end
     
-
+def current_player
+  if turn_count.even?  
+    return "X"
+  else
+    return "O"
+  end 
+end
 
 
 
@@ -59,14 +65,7 @@ end
 
 
   
-def current_player(board)
-  counter = turn_count(board)
-  if counter.even?  
-    return "X"
-  else
-    return "O"
-  end 
-end
+
 
 
 WIN_COMBINATIONS = [ 
