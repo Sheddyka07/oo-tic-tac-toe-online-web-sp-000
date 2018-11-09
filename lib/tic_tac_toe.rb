@@ -81,7 +81,45 @@ def won?
   end
 end
 
-
+def full?
+    @board.all? do |slot|
+      slot == "X" || slot == "O"
+    end
+  end
+  def draw?
+    draw = false
+    full = full?
+    won = won?
+    if full == true && won == false
+      draw = true
+    end
+  end
+  def over?
+    over = false
+    if won? != false || draw? == true
+      over = true
+    end
+  end
+  def winner
+    if won? == false
+      nil
+    elsif @board[won?[0]] == "X"
+      "X"
+    elsif @board[won?[1]] == "O"
+      "O"
+    end
+  end
+  def play
+    until over? == true
+      turn
+    end
+    if won? != false
+      puts "Congratulations #{winner}!"
+    elsif draw? == true
+      puts "Cats Game!"
+    end
+  end
+end
 
 
 
