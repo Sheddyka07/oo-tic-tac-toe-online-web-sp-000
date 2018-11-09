@@ -28,18 +28,16 @@ end
     @board[index] != " " && @board[index] != ""
   end
 
-  def valid_move?(input)
-    index = input_to_index(input)
-    index.between?(0,8) && !position_taken?(index)
+  def valid_move?(input_to_index)
+    input_to_index.between?(0,8) && !position_taken?(input_to_index)
   end
 
  def turn
     puts "Please enter 1-9:"
     input = gets.strip
-    index = input_to_index(input)
-    if valid_move?(input)
+    if valid_move?(input_to_index)
       player = current_player
-      move(input, player)
+      move(input_to_index, player)
       display_board
     else
       turn
